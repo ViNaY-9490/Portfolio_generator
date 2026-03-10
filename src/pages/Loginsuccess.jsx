@@ -3,8 +3,11 @@ import PortfolioForm from "../Components/PortfolioForm"
 import PortfolioPreview from "../Components/PortfolioPreview"
 import Swal from "sweetalert2"
 import axios from "axios"
+import { useLocation } from "react-router-dom";
 
 function Builder(){
+    const location = useLocation();
+const username = location.state?.username;
 
 const [data,setData] = useState({
 name:"",
@@ -292,6 +295,7 @@ icon:"error"
 return(
 
 <div className="container py-5">
+    <h2>Welcome {username} 🎉</h2>
     <h2 class="display-5 fw-bold text-primary border-bottom pb-3"> Mr Vinay Portfolio Generator
 </h2>
 
